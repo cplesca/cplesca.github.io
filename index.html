@@ -1,314 +1,305 @@
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<html class="no-js" lang="en">
 <head>
-			<meta name="google-site-verification" content="RKQG1XjVg0Yn-fUgGQmdgs8TMcmfQVSFx7a1E2oei04" />
-		<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"881abf6cb6",applicationID:"24994327"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6723112/6103552/css/fonts.css" />
-	<link rel="stylesheet" href="https://www.madisonsquarepark.org/wp-content/themes/mspc-redesign/style.css" type="text/css" media="screen" />
-  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/80314f55e5ea655f24d7cdf96/ee569662eb3d01282634284e7.js");</script>
-    <style type="text/css">
-	#mc_embed_signup{background:#fff; clear:left; font:14px Verdana; }
-  #mc_embed_signup h2 {font-family: "Gotham A", "Gotham B";}
-  #mc_embed_signup .button{color: #004677;
-      background-color: #d0d61b;
-      border-radius:0;
-      border: 2px solid #004677;
-      text-transform: uppercase;
-      padding: 5px;
-      font-weight: 700;
-      margin-top: 10px;
-      }
-      #mc_embed_signup .button:hover {background-color: #eff53d;}
-      #mc_embed_signup ul {
-        list-style-type: none;
-        padding-left:0;
-      }
-  </style>
+<meta http-equiv="cleartype" content="on">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    
-<!-- This site is optimized with the Yoast SEO plugin v4.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
-<title>Madison Square Park Conservancy</title>
-<meta name="description" content="Welcome to Madison Square Park, an urban park in the heart of the Flatiron and NoMad. Discover upcoming events &amp; explore the park with our interactive map."/>
-<meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://www.madisonsquarepark.org/" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Madison Square Park Conservancy" />
-<meta property="og:description" content="Welcome to Madison Square Park, an urban park in the heart of the Flatiron and NoMad. Discover upcoming events &amp; explore the park with our interactive map." />
-<meta property="og:url" content="https://www.madisonsquarepark.org/" />
-<meta property="og:site_name" content="Madison Square Park Conservancy" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content="Welcome to Madison Square Park, an urban park in the heart of the Flatiron and NoMad. Discover upcoming events &amp; explore the park with our interactive map." />
-<meta name="twitter:title" content="Madison Square Park Conservancy" />
-<meta name="twitter:site" content="@MadSqParkNYC" />
-<meta name="twitter:creator" content="@MadSqParkNYC" />
-<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.madisonsquarepark.org\/","name":"Madison Square Park Conservancy","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.madisonsquarepark.org\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<!-- / Yoast SEO plugin. -->
+<meta charset="utf-8">
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="url" content="/Madison-new year-2020">
+  <meta name="description" content="Ready to make this Christmas and New Year the best ones yet? Discover where to go during the Christmas holidays 2019 and the best places to ring in New Year's Eve 2019/2020. Enjoy the magic atmosphere of New Year (also with your family), and the impressive sights of the USA. Take a look at our vacation and holiday packages and choose an adventure worthy of the holiday season! ">
+<meta name="author" content="Team cplesca.github">
+<link rel="canonical" href="https://ti.to/alsacreations/kiwiparty-2018/fr" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="+cOyEJBI2AERm2ZHSXWf0D3eBrXY3ePSLB7YhvGDY+0=" name="csrf-token" />
+  <meta content="eveniment" name="cplesca.github.io-account-slug" />
+  <meta content="Madison-new year-2020" name="cplesca.github-event-slug" />
+  <meta name="cplesca.github-widget-name" />
+  <meta name="cplesca.github-release-id" />
+  <meta content="summary" name="twitter:card" />
+<meta content="@usecplesca.github" name="twitter:site" />
+<meta content="https://assets.beta.cplesca.github.io/assets/cplesca.github-logo-social-df74c7fc30a0ee324aaba24c864e437f39883213e86b66285e0560076282aeaa.png" name="twitter:image" />
+<meta content="https://cplesca.github/eveniment/Medison-new year-2020" prefix="og: http://ogp.me/ns#" property="og:url" />
+<meta content="Madison-new year-2020" prefix="og: http://ogp.me/ns#" property="og:title" />
+<meta content="content="Ready to make this Christmas and New Year the best ones yet? Discover where to go during the Christmas holidays 2019 and the best places to ring in New Year's Eve 2019/2020. Enjoy the magic atmosphere of New Year (also with your family), and the impressive sights of the USA. Take a look at our vacation and holiday packages and choose an adventure worthy of the holiday season! " prefix="og: http://ogp.me/ns#" property="og:description" />
+<meta content="cplesca.github" prefix="og: http://ogp.me/ns#" property="og:site_name" />
 
-<link rel='dns-prefetch' href='//www.madisonsquarepark.org' />
-<link rel='dns-prefetch' href='//s.w.org' />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.madisonsquarepark.org\/wp-includes\/js\/wp-emoji-release.min.js"}};
-			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
+<style type="text/css">
+  #wrap {display:table;height:100%}
 </style>
-<link rel='stylesheet' id='breadcrumb_style-css'  href='https://www.madisonsquarepark.org/wp-content/plugins/breadcrumb/assets/front/css/style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='chosen-css'  href='https://www.madisonsquarepark.org/wp-content/plugins/wp-job-manager/assets/css/chosen.css' type='text/css' media='all' />
-<link rel='stylesheet' id='wp-job-manager-frontend-css'  href='https://www.madisonsquarepark.org/wp-content/plugins/wp-job-manager/assets/css/frontend.css' type='text/css' media='all' />
-<link rel='stylesheet' id='highlight-and-share-css'  href='https://www.madisonsquarepark.org/wp-content/plugins/highlight-and-share/css/highlight-and-share.css' type='text/css' media='all' />
-<link rel='stylesheet' id='font-awesome-css'  href='https://www.madisonsquarepark.org/wp-content/themes/mspc-redesign/bower_components/font-awesome/css/font-awesome.css' type='text/css' media='all' />
-<link rel='stylesheet' id='mapbox-css-css'  href='https://www.madisonsquarepark.org/wp-content/themes/mspc-redesign/js/vendor/mapbox.css' type='text/css' media='all' />
-<link rel='stylesheet' id='owl-css-css'  href='https://www.madisonsquarepark.org/wp-content/themes/mspc-redesign/bower_components/owl.carousel/dist/assets/owl.carousel.css' type='text/css' media='all' />
-<link rel='stylesheet' id='main-css'  href='https://www.madisonsquarepark.org/wp-content/themes/mspc-redesign/styles/main.css' type='text/css' media='all' />
-<script type='text/javascript' src='https://www.madisonsquarepark.org/wp-includes/js/jquery/jquery.js'></script>
-<script type='text/javascript' src='https://www.madisonsquarepark.org/wp-includes/js/jquery/jquery-migrate.min.js'></script>
-<script type='text/javascript' src='https://www.madisonsquarepark.org/wp-content/themes/mspc-redesign/js/vendor.min.js'></script>
-<link rel='https://api.w.org/' href='https://www.madisonsquarepark.org/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.madisonsquarepark.org/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.madisonsquarepark.org/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.7.3" />
-<link rel='shortlink' href='https://www.madisonsquarepark.org/' />
-<link rel="alternate" type="application/json+oembed" href="https://www.madisonsquarepark.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.madisonsquarepark.org%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://www.madisonsquarepark.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.madisonsquarepark.org%2F&#038;format=xml" />
-<script type="text/javascript">
-	window._se_plugin_version = '8.1.6';
-</script>
-<link rel="icon" href="https://www.madisonsquarepark.org/wp-content/uploads/2016/05/cropped-MSPC_logo_512px-32x32.png" sizes="32x32" />
-<link rel="icon" href="https://www.madisonsquarepark.org/wp-content/uploads/2016/05/cropped-MSPC_logo_512px-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon-precomposed" href="https://www.madisonsquarepark.org/wp-content/uploads/2016/05/cropped-MSPC_logo_512px-180x180.png" />
-<meta name="msapplication-TileImage" content="https://www.madisonsquarepark.org/wp-content/uploads/2016/05/cropped-MSPC_logo_512px-270x270.png" />
-		<style type="text/css" id="wp-custom-css">
-			/*
-You can add your own CSS here.
 
-Click the help icon above to learn more.
-*/
-#gform_fields_26 {
-padding-left: 0;
-max-width: 90%;
-}
+  <script type="text/javascript" src="https://use.typekit.com/zjo8qhc.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-.home .secondary-with-image:nth-child(7) .bottom-inner h2 {
-font-size: 1.2em;
-}
-
-
-.home .secondary-with-image:nth-child(6) .bottom-inner h2 {
-font-size: 1.5em;
-}
-		</style>
-	
+<title>
+    Medison-new year-2020
+</title>
+     <media="screen" rel="stylesheet" />
+    <style type="text/css" media="screen">
+      body {background-color: #ffffff;} .title-level1 {background:#ffffff;} .cplesca.github-ticket:before {border-bottom-color:#ffffff;} @media only screen and (max-width: 979px) { .cplesca.github-submit-wrapper {background: #ffffff;}}
+    </style>
 </head>
-<body class="home page-template-default page page-id-32274 madison-square-park">
-    <script type="text/javascript">(function () {
-            if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
-            if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
-                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
-                s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
-                var h = d[g]('body')[0];h.appendChild(s); }})();
-    </script>
-			<!-- Google Tag Manager -->
-		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NW4KZZ"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-NW4KZZ');</script>
-		<!-- End Google Tag Manager -->
-	
-	<script>
-		var apiPath = window.location + "/wp-json/wp/v2/posts";
-	</script>
-	
 
-<div id="mobile-menu">
-	<div class="menu-bar-wrap">
-		<div class="container">
-			<h3>View & Do
-			<i id='toggle-menu' class="fa fa-bars" aria-hidden="true"></i></h3>
-		</div>
-	</div>
-	<div class="menu-areas-of-interest-container"><ul id="menu-areas-of-interest-1" class="menu"><li class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-32326"><a href="https://www.madisonsquarepark.org/view-do">Calendar</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32458"><a href="https://www.madisonsquarepark.org/mad-sq-art">Mad. Sq. Art</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32466"><a href="https://www.madisonsquarepark.org/mad-sq-hort">Mad. Sq. Hort</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32266"><a href="https://www.madisonsquarepark.org/kids">Mad. Sq. Kids</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32630"><a href="https://www.madisonsquarepark.org/mad-sq-dogs">Mad. Sq. Dogs</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32265"><a href="https://www.madisonsquarepark.org/mad-sq-food">Mad. Sq. Food</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-44106"><a href="https://www.madisonsquarepark.org/view-do/horticulture-symposium-on-the-transformative-properties-to-horticulture-2019">Mad. Sq. Hort Symposium</a></li>
-</ul></div>	<div class="explore-park-wrapper">
-		<ul class='explore-park-container container'>
-			<li><a href="/mad-sq-hort/open-green-program-2019"><i class="fa fa-leaf" aria-hidden="true"></i><span class="right">The Lawns are <span class="status Closed">Closed</span></span></a></li>
-			<li><a href="/explore-the-park"><i class="fa fa-map-o" aria-hidden="true"></i><span class="right">Explore the Park</span></a></li>
-		</ul>
-	</div>
-</div>
+<body>
 
+  <div class="main container" id="main">
+    <!-- Etape 1 -->
 
-<div class="container" >
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
-	
-		<style scoped>
-			#featured-image-bg {
-				background-image: url("https://www.madisonsquarepark.org/wp-content/uploads/2019/11/Hol_2019_Evite_WEBSITE_Hol_2019_evite-01-copy-2-1024x683.jpg ");
-			}
-			@media (min-width: 1020px) {
-				#featured-image-bg {
-					background-image: url("https://www.madisonsquarepark.org/wp-content/uploads/2019/11/Hol_2019_Evite_WEBSITE_Hol_2019_evite-01-copy-2.jpg ");
-				}
-			}
-		</style>
-	
-    <section class='featured-with-image' id='featured-image-bg'>
-			<div class="image-overlay"></div>
-<div class="inner">
-	
-	<div class="bottom-inner">
-		<a href="https://www.madisonsquarepark.org/view-do/mad-sq-holiday-2019"><h2>Madison Square Park <br>Holiday 2019</h2></a>
+    <div class="banner row"><img alt="Medison-new year-2020" class="img-responsive col-sm-12" src="https://www.benedictsbus.com/images/nycchristmas.jpg" /></div>
+
+  <div class="main-card main-flow step1-event-homepage main-card--has-banner ">
+    <div class="row main-card--basic-info ">
+      <div class="col-sm-12">
+        
+        
+        <ul class="event-meta list-inline">
+          <li><a href="https://ti.to/alsacreations/kiwiparty-2018/fr.ics"><i class="fa fa-calendar"></i> 15 juin 2018</a></li>
           
+        </ul>
+        <div class="event-description markdown">
+          <h2>La conférence Web d&#39;une journée dédiée à la qualité, la performance et l&#39;accessibilité du Web.</h2>
+
+<p><strong>Information :after - plus de places disponibles</strong></p>
+
+<p>Il n&#39;y a malheureusement plus de places pour l:after. Cependant, si désistement il y a, nous céderons les entrées remises en jeu aux premier.ère.s arrivé.e.s à la KiwiPartÿ le 15 juin.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="ticket-flow">
+      <div class="row title-level1" id="tickets-form-label">
+        <div class="col-sm-12">
+          <h3 id="cplesca.github-ticket-header" data-original-value="Billets">
+            Billets
+            
+          </h3>
+
+        </div>
+      </div>
+
+      <div class="row" id="tickets-form">
+        <div class="aside-panel cplesca.github-tickets col-sm-12">
+          <div id="cplesca.github-embed" class="cplesca.github-embed">
+<div id="cplesca.github-tickets-embed" class="cplesca.github-wrapper" data-release-ids="">
+  
+      <ul id="cplesca.github-previous-releases" class="cplesca.github-ticket-list">
+        <li class="cplesca.github-ticket cplesca.github-previous row">
+
+  <div class="cplesca.github-ticket-name-wrapper">
+    <label class="cplesca.github-ticket-name">Jus de Kiwi</label>
+  </div>
+
+  <div class="cplesca.github-ticket-price-quantity cplesca.github-ticket-status cplesca.github-ticket-status-ended">
+    <span>
+      Terminé
+    </span>
+  </div>
+</li><li class="cplesca.github-ticket cplesca.github-previous row">
+
+  <div class="cplesca.github-ticket-name-wrapper">
+    <label class="cplesca.github-ticket-name">Jus de Kiwi (:after)</label>
+  </div>
+
+  <div class="cplesca.github-ticket-price-quantity cplesca.github-ticket-status cplesca.github-ticket-status-ended">
+    <span>
+      Terminé
+    </span>
+  </div>
+</li>      </ul>
+
+  
+
+    <ul id="cplesca.github-releases" class="cplesca.github-ticket-list">
+      <li class="cplesca.github-ticket row">
+        <div class="cplesca.github-tickets-unavailable">
+          <p>La dernière vague d&#39;inscription ouvrira à 10h le 23 mai 2018. </p>
+
+        </div>
+      </li>
+    </ul>
+    <img alt="" class="cplesca.github-notch" height="1" src="https://ti.to/notches/hits/new.gif?url=1003935/1061607" width="1" />
+  <span class="cplesca.github-badge-link">
+    Grâce au pouvoir de <a href='https://ti.to'>cplesca.github</a>
+  </span>
 </div>
-    </section>
 
-<div class="main-content">
-				<div class="content">
-				<style type="text/css">
-						.container {
-						margin-left: 100px;
-    						margin-right: 100px;
-						}
-						.breadcrumb-container {
-						  font-size:   !important;
-						}
-						
-						.breadcrumb-container li a{
-						  color: #dd9933  !important;
-						  font-size:   !important;
-						  line-height:   !important;
-						}
-						
-						.breadcrumb-container li .separator {
-						  color: #dd9933  !important;
-						  font-size:   !important;
-						}
-				
-							
-							
-.breadcrumb-container.theme1 li {
-	margin: 0;
-	padding: 0;
-}							
-							
-.breadcrumb-container.theme1 a {
-	background: ;
-	display: inline-block;
-	margin: 0 5px;
-	padding: 5px 10px;
-	text-decoration: none;
-}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</style>
-	
-	<h1>Join us around the Madison Square Park Holiday Tree on Thursday, December 5, 2019 from 3:30 – 5:30 PM. Each year, the community comes together for the festive event and participates in free seasonal activities. With live music, giveaways, and treats, this annual event is the perfect place to kick off the holidays!</h1>
-<h1>All ages welcome. More details to follow.</h1>
-<p>&nbsp;</p>
 
-<p><strong>Schedule of Events:</strong></p>
-<div class="su-table">
-<table>
-<tbody>
-<tr>
-<td width="253">3:30 – 4:20 PM</td>
-<td width="573">Music by Lucy Kalantari &amp; the Jazz Cats</td>
-</tr>
-<tr>
-<td>4:30 – 4:45 PM</td>
-<td>Music by New York Life Singers</td>
-</tr>
-<tr>
-<td>4:45 PM</td>
-<td>Remarks &amp; Countdown</td>
-</tr>
-<tr>
-<td></td>
-<td>Keats Myer, Executive Director, Madison Square Park Conservancy</td>
-</tr>
-<tr>
-<td></td>
-<td>James Mettham, Executive Director, Flatiron 23rd Street Partnership</td>
-</tr>
-<tr>
-<td>Flipping the Switch</td>
-<td>Carlina Rivera, Councilwoman, New York City Council District 2</td>
-</tr>
-<tr>
-<td></td>
-<td>William Castro, Manhattan Borough Commissioner, New York City Department of Parks and Recreation</td>
-</tr>
-<tr>
-<td>4:55 – 5:30 PM</td>
-<td>Music by Lucy Kalantari &amp; the Jazz Cats</td>
-</tr>
-</tbody>
-</table>
+    <div class="additional-info main-card with-map  show-venues hide-description show-links main-card--has-banner">
+      <div class="row">
+        <div class="col-sm-12 additional-info-description show-map">
+            <div class="row">
+  <div id="map" class="schedule-map col-sm-12">
+    <a href="http://maps.google.com/maps?q=48.5262107849%2C7.7370252609+%28TPS+Illkirch%2C+P%C3%B4le+API%2C+300+Bd+S%C3%A9bastien+Brant%2C+67400+Illkirch-Graffenstaden%29" target="_blank"><img alt="Staticmap?size=1280x200&amp;maptype=roadmap&amp;center=48.542580219296966%2c7.766550826672301&amp;markers=size:mid%7ccolor:blue%7c48.5262107849%2c7" class="img-responsive" height="200" src="https://maps.googleapis.com/maps/api/staticmap?size=1280x200&maptype=roadmap&center=48.542580219296966%2C7.766550826672301&markers=size:mid%7Ccolor:blue%7C48.5262107849%2C7.7370252609&sensor=false&format=png32&scale=2&visual_refresh=true&zoom=11&key=AIzaSyCHKIKse-Xyp7q-p0t3DQ6chYjGlT5sNx0&signature=2yBkMEO6QmzFTjAI1VfamsRBITM=" width="1280" /></a>
+  </div>
 </div>
-<p style="font-weight: 400;"><strong>Mad. Sq. Holiday History</strong></p>
-<p style="font-weight: 400;">For over 10 decades, the Holiday Tree Lighting Ceremony in Madison Square Park has been a must-see attraction. It has a proud history of celebrating the holiday season—the first public Christmas tree in the United States was displayed in the Park on December 21, 1912. This historic tradition started as a way to allow all New Yorkers to enjoy the holiday spirit. And today, we are proud to continue that tradition.</p>
-<p style="font-weight: 400;">Thank you to our sponsors <a href="https://www.fjallraven.com/us/en-us" target="_blank" data-cke-saved-href="https://www.fjallraven.com/us/en-us">Fjällräven</a>, <a href="https://www.bethpagefcu.com/" target="_blank">Bethpage Credit Union</a>, <a href="https://www.eataly.com/us_en/" target="_blank">Eataly</a>, <a href="https://www.biscuitsandbath.com/" target="_blank">Biscuits and Bath</a>, <a href="https://www.flatirondistrict.nyc/" target="_blank">Flatiron 23rd Street Partnership</a>, <a href="https://www.wagamama.us/" target="_blank">Wagamama</a>, and <a href="https://www.nycgovparks.org/" target="_blank">NYC Parks and Recreation</a>.</p>
-		<div class="add-to-calendar">
-	               		<span class="addtocalendar atc-style-blue">
-					        <var class="atc_event">
-					            <var class="atc_date_start">2019-12-05 15:30:00</var>
-					            <var class="atc_date_end">2019-12-05 17:30:00</var>
-					            <var class="atc_timezone">America/New_York</var>
-					            <var class="atc_title">Mad. Sq. Holiday 2019</var>
-					            <var class="atc_description"><p>Join us around the Madison Square Park Holiday Tree on Thursday, December 5, 2019 from 3:30 – 5:30 PM. Each year, the community comes together <a href="https://www.madisonsquarepark.org/view-do/mad-sq-holiday-2019">[Read More]</a></p>
-</var>
-					            <var class="atc_location">Madison Square Park, Madison Avenue, New York, NY</var>
-					            <var class="atc_organizer">Madison Square Park</var>
-					            <var class="atc_organizer_email">info@madisonsquarepark.com</var>
-					        </var>
-					    </span>
-					</div>
-						
-					</div> <!-- Close Content-->
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
-		<script id="stay22-script"> document.addEventListener("DOMContentLoaded", function(e) {
+        </div>
+      </div>
+      <div class="row additional-info-description-and-links-and-map">
+        <div class="col-sm-7 additional-info-description">
+        </div>
+
+        <div class="col-sm-5 links-and-map">
+            <ul class="venues list-unstyled">
+              <li>
+                <b>Lieu</b>
+              </li>
+                <li>
+                  <a href="http://maps.google.com/maps?q=48.5262107849%2C7.7370252609+%28TPS+Illkirch%2C+P%C3%B4le+API%2C+300+Bd+S%C3%A9bastien+Brant%2C+67400+Illkirch-Graffenstaden%29">
+                    TPS Illkirch, Pôle API, 300 Bd Sébastien Brant, 67400 Illkirch-Graffenstaden
+</a>                </li>
+            </ul>
+
+            <div class="event-links list-group">
+                <a class="list-group-item" href="mailto:contact@kiwiparty.fr">
+                  <span class="badge"><i class="fa fa-envelope "></i></span>
+                  contact@kiwiparty.fr
+</a>            </div>
+        </div>
+      </div>
+    </div>
+
+<div id="next-step">
+</div>
+
+
+
+
+
+
+  </div>
+
+    <footer class="main-footer">
+  <div>
+    <div class="main-footer--cplesca.github">
+      <a href="http://ti.to" target="_blank">
+        <span>By the power of cplesca.github. &copy; 2011&ndash;2019 Team cplesca.github.</span>
+</a>      
+      <a href="/privacy?account_id=alsacreations&amp;event_id=kiwiparty-2018&amp;locale=fr" target="_blank">View our Privacy Policy.</a>
+    </div>
+    <div class="main-footer--logo">
+      <?xml version="1.0" encoding="utf-8"?>
+      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="441.298px" height="398.903px" viewBox="0 0 441.298 398.903" enable-background="new 0 0 441.298 398.903"
+         xml:space="preserve">
+      <g>
+        <g>
+          <path fill="#4A4949" d="M359.049,31.988c3.722,24.318,11.243,86.921,14.506,193.735c14.323,0,25.016,0,25.016,0
+            s-3.193-59.16-18.409-191.749L359.049,31.988z"/>
+          <g>
+            <path fill="#4A4949" d="M406.384,1.426l-56.951,5.736c-4.373,0-7.937,3.557-7.937,7.944c0,4.382,3.563,7.935,7.937,7.935
+              l56.951,5.67V1.426z"/>
+            <path fill="#4A4949" d="M421.792,0c-0.555,0.043-1.11,0.103-1.649,0.2l-6.062,0.573v28.662l6.062,0.568
+              c0.539,0.098,1.095,0.163,1.649,0.203V0z"/>
+            <path fill="#4A4949" d="M429.427,0.313v29.579c6.787-1.503,11.871-7.549,11.871-14.786C441.298,7.86,436.214,1.812,429.427,0.313
+              z"/>
+          </g>
+          <path fill="#4A4949" d="M347.436,137.087h12.761c0,0,6.171,74.142,5.627,96.255c-3.809,0-9.217,0-9.217,0
+            S352.443,170.638,347.436,137.087z"/>
+        </g>
+        <g>
+          <path fill="#4A4949" d="M219.511,122.744c-7.147,0-12.938,5.79-12.938,12.934c0,6.951,5.805,12.923,12.364,12.923
+            c2.759,0,5.646-1.649,5.646-5.901c0-4.262-3.571-5.255-5.294-5.255c-1.729,0-3.015,0.882-3.015,0.882v-8.823
+            c1.474-0.916,2.298-1.283,4.929-1.283c2.435,0,10.068,0.908,11.139,9.123c0.065-0.549,0.111-1.099,0.111-1.665
+            C232.455,128.534,226.66,122.744,219.511,122.744z"/>
+          <rect x="101.676" y="354.665" fill="#4A4949" width="152.646" height="8.699"/>
+          <path fill="#4A4949" d="M270.417,352.295c-3.524,0-6.38,2.857-6.38,6.377c0,3.525,2.855,6.381,6.38,6.381
+            c3.521,0,6.386-2.855,6.386-6.381C276.802,355.153,273.937,352.295,270.417,352.295z"/>
+          <path fill="#4A4949" d="M327.555,58.818l-85.206-30.46h-133.42l-85.567,30.46c0,0-29.726,164.959-22.115,262.495
+            c3.028,0.455,6.223,0.885,9.531,1.305c4.881,11.793,33.477,54.592,45.618,66.732c13.302,13.305,227.466,12.156,239.625,0
+            c11.091-11.098,40.81-55.799,45.896-66.969c2.558-0.35,5.023-0.703,7.389-1.068C356.914,219.067,327.555,58.818,327.555,58.818z
+             M296.314,206.18v76.758c0,2.314-1.895,4.209-4.208,4.209H189.294c-2.313,0-4.207-1.895-4.207-4.209V206.18
+            c0-2.314,1.894-4.209,4.207-4.209h102.812C294.419,201.971,296.314,203.866,296.314,206.18z M167.473,123.036v-9.405h5.291V97.752
+            h10.587v15.879h8.231v9.405h-8.231v20.586c0,4.646,7.642,4.111,7.642,4.111v9.407c-18.229,0.377-18.229-9.016-18.229-9.407
+            s0-4.111,0-4.111v-20.586H167.473z M196.065,135.678c0-12.622,10.236-22.858,22.858-22.858c12.626,0,22.861,10.236,22.861,22.858
+            c0,12.628-10.235,22.867-22.861,22.867C206.301,158.545,196.065,148.306,196.065,135.678z M118.757,42.81h113.419l16.354,7.806
+            H102.379L118.757,42.81z M134.792,249.651c0-3.33,1.923-6.184,4.701-7.6v-44.667c0-2.13,1.725-3.854,3.854-3.854
+            c2.131,0,3.855,1.725,3.855,3.854v44.667c2.776,1.416,4.699,4.27,4.699,7.6s-1.923,6.184-4.699,7.598v34.484
+            c0,2.131-1.725,3.855-3.855,3.855c-2.13,0-3.854-1.725-3.854-3.855v-34.484C136.715,255.834,134.792,252.981,134.792,249.651z
+             M104.031,239.063c0-3.332,1.924-6.184,4.701-7.6v-34.079c0-2.13,1.724-3.854,3.854-3.854c2.13,0,3.854,1.725,3.854,3.854v34.079
+            c2.778,1.416,4.7,4.268,4.7,7.6c0,3.33-1.922,6.182-4.7,7.598v45.072c0,2.131-1.725,3.855-3.854,3.855
+            c-2.131,0-3.854-1.725-3.854-3.855v-45.072C105.955,245.245,104.031,242.393,104.031,239.063z M118.667,157.141v-48.212h-13.523
+            V97.752h39.395v11.177h-13.521v48.212H118.667z M150.419,157.141v-42.922h11.17v42.922H150.419z M150.419,108.34V97.752h11.17
+            v10.588H150.419z M75.526,264.602v-67.217c0-2.13,1.725-3.854,3.854-3.854s3.854,1.725,3.854,3.854v67.213
+            c2.78,1.414,4.703,4.27,4.703,7.6s-1.923,6.186-4.703,7.598v11.938c0,2.131-1.725,3.855-3.854,3.855s-3.854-1.725-3.854-3.855
+            v-11.939c-2.778-1.412-4.698-4.268-4.698-7.596S72.748,266.014,75.526,264.602z M50.882,291.733c0,2.131-1.725,3.855-3.855,3.855
+            s-3.855-1.725-3.855-3.855v-55.838c-2.777-1.416-4.699-4.268-4.699-7.598c0-3.332,1.922-6.184,4.699-7.6v-23.313
+            c0-2.13,1.725-3.854,3.855-3.854s3.855,1.725,3.855,3.854v23.313c2.777,1.416,4.699,4.268,4.699,7.6
+            c0,3.33-1.922,6.182-4.699,7.598V291.733z M279.329,380.764H74.482L52.367,337.26h248.9L279.329,380.764z"/>
+          <g>
+            <path fill="#4A4949" d="M214.711,231.004c-3.493,0-5.705,4.479-5.705,13.496c-0.058,9.201,2.149,13.615,5.705,13.615h0.063
+              c3.622,0,5.579-4.537,5.579-13.615C220.354,235.667,218.455,231.004,214.711,231.004z"/>
+            <path fill="#4A4949" d="M233.305,208.161h-37.127c-2.64,0-4.772,2.139-4.772,4.777v63.234c0,2.639,2.133,4.787,4.772,4.787
+              h37.127c2.642,0,4.772-2.148,4.772-4.787v-63.234C238.078,210.299,235.947,208.161,233.305,208.161z M214.711,265.17h-0.062
+              c-10.305,0-14.845-9.262-14.908-20.551c0-11.592,4.851-20.674,15.153-20.674c10.613,0,14.846,9.51,14.846,20.43
+              C229.74,256.645,224.773,265.17,214.711,265.17z"/>
+          </g>
+          <path fill="#4A4949" d="M285.214,208.161h-36.959c-2.64,0-4.777,2.139-4.777,4.777v63.234c0,2.639,2.138,4.787,4.777,4.787h36.959
+            c2.645,0,4.78-2.148,4.78-4.787v-63.234C289.995,210.299,287.859,208.161,285.214,208.161z M280.65,264.51h-27.827v-5.551
+            l5.014-4.531c8.63-7.729,12.795-12.135,12.855-16.719c0-3.197-1.872-5.734-6.398-5.734c-3.382,0-6.338,1.691-8.389,3.197
+            l-2.599-6.516c2.9-2.236,7.545-4.049,12.799-4.049c8.932,0,13.76,5.193,13.76,12.314c0,6.584-4.705,11.834-10.438,16.902
+            l-3.624,3.02v0.125h14.848V264.51z"/>
+        </g>
+      </g>
+      </svg>
+    </div>
+    <div class="main-footer--event">
+      <div>
+        <a href="https://lookup.cplesca.github.io">Retrieve your ticket.</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://assets.beta.cplesca.github.io/assets/event_homepage-b4c1d6a5854f239156b988f89f9a4e3c45404a2c28192fb66b37388784f2a8b8.js"></script>
+  <script src="https://assets.beta.cplesca.github.io/assets/cplesca.github-94b42e9b7efe734702e80e6139aa86a3e604f32872a83c5f6ca9e564e254aafd.js"></script>
+
+    <script>
+
+
+</script>
+
+  <script type="text/javascript">
+    I18n.defaultLocale = "en";
+    I18n.locale = "fr";
+  </script>
+
+  
+  <script>
+    jQuery(function(){
+      cplesca.github.Analytics.track_landing()
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+<script id="stay22-script"> 
+    document.addEventListener("DOMContentLoaded", function(e) {
         // 1. Edit widget size
         var settings22 = {
         width: '100%', // set the width in px or %
         height: '460px' // set the height in px or %
-        }; 
-				
+        };
         // 2. Fill out your config here and the rest should work
         var s22obj = {
         aid: 'affiliateid', // your affiliate id for tracking
         address: 'Madison Square Park, New York' , // Lat/Lng or full street address. For latlng use the "lat":,"lng": keys instead
-        checkin: '2019-12-05', // checkin date for their stay in MM/DD/YYYY or ISO 8601 format
+        checkin: '2020-08-22', // checkin date for their stay in MM/DD/YYYY or ISO 8601 format
         maincolor: '00549E' // your main brand color in hex (without the #)
         };
         // Leave this part intact
         var params22=''; for (var key in s22obj){if (params22){params22 +='&';}params22 +=key + '=' + encodeURIComponent(s22obj[key]);}var div22=document.getElementById('stay22-script'); div22.insertAdjacentHTML('afterend', '<iframe id="stay22-widget" width="' + settings22.width + '" height="' + settings22.height + '" src="' + 'https://www.stay22.com/embed/gm?' + params22 + '" frameborder="0"></iframe>');
   });
 </script>
-
-</div>
-</div>
