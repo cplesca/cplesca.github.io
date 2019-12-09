@@ -26,27 +26,25 @@ const price_estimation = [
  { "Public transport":"Subway MTA" , "PRICE":"$3 single ticket" }
  ]
 }
-  {
-    name: "Purrsloud",
-    species: "Cat",
-    favFoods: ["wet food", "dry food", "<strong>any</strong> food"],
-    birthYear: 2016,
-    photo: "https://learnwebcode.github.io/json-example/images/cat-2.jpg"
-  },
-  {
-    name: "Barksalot",
-    species: "Dog",
-    birthYear: 2008,
-    photo: "https://learnwebcode.github.io/json-example/images/dog-1.jpg"
-  },
-  {
-    name: "Meowsalot",
-    species: "Cat",
-    favFoods: ["tuna", "catnip", "celery"],
-    birthYear: 2012,
-    photo: "https://learnwebcode.github.io/json-example/images/cat-1.jpg"
-  }
-];
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <Public_transport>
+    <PRICE>$3/km</PRICE>
+    <Public_transport>New York taxi</Public_transport>
+  </Public_transport>
+  <Public_transport>
+    <PRICE>$2.75</PRICE>
+    <Public_transport>BUS standard</Public_transport>
+  </Public_transport>
+  <Public_transport>
+    <PRICE>$6.50</PRICE>
+    <Public_transport>BUS express</Public_transport>
+  </Public_transport>
+  <Public_transport>
+    <PRICE>$3 single ticket</PRICE>
+    <Public_transport>Subway MTA</Public_transport>
+  </Public_transport>
+</root>
 
 function age(birthYear) {
   let calculatedAge = new Date().getFullYear() - birthYear;
