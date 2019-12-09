@@ -1,48 +1,50 @@
-[
- {
-   "Airlines": "Expressje",
-   "Duration": "2 h 11 m",
-   "Price": "1700$"
- },
- {
-   "Airlines": "Air Canada",
-   "Duration": "1 h 45 m",
-   "Price": "3500$"
- },
- {
-   "Airlines": "Envoy Air",
-   "Duration": "12h 20m",
-   "Price": "2500$"
- }
-}
-
-
+<script type="application/ld+json">
 {
- "HOTEL": [
- { "HOTEL":"THE NEW YORK EDITION" , "DISTANCE":"0.13 KM" , "PRICE":"$463" },
- { "HOTEL":"The Mave Hotel" , "DISTANCE":"0.21KM" ,"PRICE":"$383" },
- { "HOTEL":"Heritage Hotel New York City" , "DISTANCE":"0.21KM"  , "PRICE":"$191" }
- ]
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Madison-new year-2020",
+    "url": "https://cplesca.github.io/",
+    "startDate": "2019-12-23T12:00",
+    "location": {
+        "@type": "Place",
+        "name": "Madison Square Park",
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11 Madison Ave, New York,",
+        "addressLocality": "Madison Square Park",
+        "postalCode": "NY 10010",
+        "addressCountry": "USA"
+        }
+    },
+    "image":"https://www.benedictsbus.com/images/nycchristmas.jpg",
+    "description": "Ready to make this Christmas and New Year the best ones yet? Discover where to go during the Christmas holidays 2019 and the best places to ring in New Year Eve 2019/2020. Enjoy the magic atmosphere of New Year (also with your family), and the impressive sights of the USA. Take a look at our vacation and holiday packages and choose an adventure worthy of the holiday season!",
+    "endDate": "2020-01-02T12:00",
+    
+    "FLIGHT":[
+       { "AIRLINES":"Expressjet " , "DURATION":"2 h 11 m" , "PRICE":"$352" },
+       { "AIRLINES":"Air Canada" , "DURATION":"1 h 44 m" ,"PRICE":"$383" },
+       { "AIRLINES":"Envoy Air" , "DURATION":"1 h 46 m" , "PRICE":"$435" }
+       ],
+      
+       "HOTEL": [
+          {"HOTEL":"THE NEW YORK EDITION" , "DISTANCE":"0.13 KM" , "PRICE":"$463" },
+          {"HOTEL":"The Mave Hotel" , "DISTANCE":"0.21KM" ,"PRICE":"$383" },
+          {"HOTEL":"Heritage Hotel New York City" , "DISTANCE":"0.21KM"  , "PRICE":"$191" }
+         ],
+   	   "Restaurants": [
+           { "Restaurants":"The Elgin" , "DISTANCE":"0.13 KM" , "Cuisines":"American Gastropub Pizza Pub" },
+           { "Restaurants":"Shake Shack" , "DISTANCE":"0.1KM" ,"Cuisines":"American" },
+           { "Restaurants":"Eataly" , "DISTANCE":"0.21KM"  , "Cuisines":"Italian, Soups, Neapolitan, Campania, Tuscan, Romana, Lazio, Sicilian" }
+           ],
+         "Public transport": [
+         { "Public transport":"New York taxi" , "PRICE":"$3/km" },
+         { "Public transport":"BUS standard" , "PRICE":"$2.75" },
+         { "Public transport":"BUS express" , "PRICE":"$6.50" },
+         { "Public transport":"Subway MTA" , "PRICE":"$3 single ticket" }
+         ]
+      }
 }
-
-
-
-{
- "Restaurants": [
- { "Restaurants":"The Elgin" , "DISTANCE":"0.13 KM" , "Cuisines":"American Gastropub Pizza Pub" },
- { "Restaurants":"Shake Shack" , "DISTANCE":"0.1KM" ,"Cuisines":"American" },
- { "Restaurants":"Eataly" , "DISTANCE":"0.21KM"  , "Cuisines":"Italian, Soups, Neapolitan, Campania, Tuscan, Romana, Lazio, Sicilian" }
- ]
-}
-
-{
- "Public transport": [
- { "Public transport":"New York taxi" , "PRICE":"$3/km" },
- { "Public transport":"BUS standard" , "PRICE":"$2.75" },
- { "Public transport":"BUS express" , "PRICE":"$6.50" },
- { "Public transport":"Subway MTA" , "PRICE":"$3 single ticket" }
- ]
-}
+</script>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -109,7 +111,7 @@ Take a look at our vacation and holiday packages and choose an adventure worthy 
       </div>
     </div>
 <style>
-table {
+table class="stile1"{
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -122,11 +124,17 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+table class="stile1"{ 
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray;
+}
 </style>
 </head>
 <body>
 <h2>Price estimation</h2>
-<table>
+<table class=">
   <tr>
     <th>Airlines</th>
     <th>Duration</th>
@@ -150,7 +158,7 @@ tr:nth-child(even) {
 </table>
 
 <h2>Hotels</h2>
-<table>
+<table class="stile1">
   <tr>
     <th>Name Hotels</th>
     <th>Distance</th>
@@ -174,7 +182,7 @@ tr:nth-child(even) {
 </table>
 
 <h2>Restaurants</h2>
-<table>
+<table class="stile1">
   <tr>
     <th>Name Restaurants</th>
     <th>Distance</th>
@@ -197,7 +205,7 @@ tr:nth-child(even) {
   </tr>
 </table>
 <h2>Public transport</h2>
-<table>
+<table class="stile2">
   <tr>
     <th>Public transport</th>
     <th>Price</th>
@@ -225,7 +233,7 @@ tr:nth-child(even) {
     document.addEventListener("DOMContentLoaded", function(e) {
         // 1. Edit widget size
         var settings22 = {
-        width: '100%', // set the width in px or %
+        width: '80%', // set the width in px or %
         height: '460px' // set the height in px or %
         };
         // 2. Fill out your config here and the rest should work
