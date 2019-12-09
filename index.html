@@ -1,99 +1,3 @@
-const price_estimation = [
-{
- name:"FLIGHT":
-  airlines:["Expressjet " , "DURATION":"2 h 11 m" ,"PRICE":"$352"] ,
-  AIRLINES:["Air Canada" , "DURATION":"1 h 44 m" ,"PRICE":"$383"] ,
-  AIRLINES:["Envoy Air" , "DURATION":"1 h 46 m" , "PRICE":"$435" ],
-  photo: "https://learnwebcode.github.io/json-example/images/cat-2.jpg"
-}
-{
- name:"HOTEL": 
- HOTEL:["THE NEW YORK EDITION" , "DISTANCE":"0.13 KM" , "PRICE":"$463" ],
- HOTEL:["The Mave Hotel" , "DISTANCE":"0.21KM" ,"PRICE":"$383" ],
- HOTEL:["Heritage Hotel New York City" , "DISTANCE":"0.21KM"  , "PRICE":"$191" ]
- }
-{
- name:"Restaurants": 
-  Restaurants:["The Elgin" , "DISTANCE":"0.13 KM" , "Cuisines":"American Gastropub Pizza Pub" ],
-  Restaurants:["Shake Shack" , "DISTANCE":"0.1KM" ,"Cuisines":"American" ],
-  Restaurants:["Eataly" , "DISTANCE":"0.21KM"  , "Cuisines":"Italian, Soups, Neapolitan, Campania, Tuscan, Romana, Lazio, Sicilian" ]
-}
-{
- "Public transport": [
- { "Public transport":"New York taxi" , "PRICE":"$3/km" },
- { "Public transport":"BUS standard" , "PRICE":"$2.75" },
- { "Public transport":"BUS express" , "PRICE":"$6.50" },
- { "Public transport":"Subway MTA" , "PRICE":"$3 single ticket" }
- ]
-}
-
-  <Public_transport>
-    <PRICE>$3/km</PRICE>
-    <Public_transport>New York taxi</Public_transport>
-  </Public_transport>
-  <Public_transport>
-    <PRICE>$2.75</PRICE>
-    <Public_transport>BUS standard</Public_transport>
-  </Public_transport>
-  <Public_transport>
-    <PRICE>$6.50</PRICE>
-    <Public_transport>BUS express</Public_transport>
-  </Public_transport>
-  <Public_transport>
-    <PRICE>$3 single ticket</PRICE>
-    <Public_transport>Subway MTA</Public_transport>
-  </Public_transport>
-
-
-function age(birthYear) {
-  let calculatedAge = new Date().getFullYear() - birthYear;
-  if (calculatedAge == 1) {
-    return "1 year old";
-  } else if (calculatedAge == 0) {
-    return "Baby";
-  } else {
-    return `${calculatedAge} years old`;
-  }
-}
-
-function foods(foods) {
-  return `
-<h4>Favorite Foods</h4>
-<ul class="foods-list">
-${foods.map(food => `<li>${food}</li>`).join("")}
-</ul>
-`;
-}
-
-function petTemplate(pet) {
-  return `
-    <div class="animal">
-    <img class="pet-photo" src="${pet.photo}">
-    <h2 class="pet-name">${pet.name} <span class="species">(${pet.species})</span></h2>
-    <p><strong>Age:</strong> ${age(pet.birthYear)}</p>
-    ${pet.favFoods ? foods(pet.favFoods) : ""}
-    </div>
-  `;
-}
-
-document.getElementById("app").innerHTML = `
-  <h1 class="app-title">Pets (${petsData.length} results)</h1>
-  ${petsData.map(petTemplate).join("")}
-  <p class="footer">These ${petsData.length} pets were added recently. Check back soon for updates.</p>
-`;
-
-
-
-{
- "FLIGHT": [
- { "AIRLINES":"Expressjet " , "DURATION":"2 h 11 m" , "PRICE":"$352" },
- { "AIRLINES":"Air Canada" , "DURATION":"1 h 44 m" ,"PRICE":"$383" },
- { "AIRLINES":"Envoy Air" , "DURATION":"1 h 46 m" , "PRICE":"$435" }
- ]
-}
-
-
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -163,11 +67,8 @@ Take a look at our vacation and holiday packages and choose an adventure worthy 
     <div id="ticket-flow">
       <div class="row title-level1" id="tickets-form-label">
         <div class="col-sm-12">
-          <h3 id="cplesca.github-ticket-header" data-original-value="Billets">
-            Billets
-            
+          <h3 id="cplesca.github-ticket-header" data-original-value="Billets"> Price estimation        
           </h3>
-
         </div>
       </div>
 
@@ -180,23 +81,23 @@ Take a look at our vacation and holiday packages and choose an adventure worthy 
         <li class="cplesca.github-ticket cplesca.github-previous row">
 
   <div class="cplesca.github-ticket-name-wrapper">
-    <label class="cplesca.github-ticket-name">Jus de Kiwi</label>
+    <label class="cplesca.github-ticket-name">Airlines</label>
   </div>
 
   <div class="cplesca.github-ticket-price-quantity cplesca.github-ticket-status cplesca.github-ticket-status-ended">
     <span>
-      Terminé
+      Expressjet 
     </span>
   </div>
 </li><li class="cplesca.github-ticket cplesca.github-previous row">
 
   <div class="cplesca.github-ticket-name-wrapper">
-    <label class="cplesca.github-ticket-name">Jus de Kiwi (:after)</label>
+    <label class="cplesca.github-ticket-name">Duration</label>
   </div>
 
   <div class="cplesca.github-ticket-price-quantity cplesca.github-ticket-status cplesca.github-ticket-status-ended">
     <span>
-      Terminé
+      Price
     </span>
   </div>
 </li>      </ul>
